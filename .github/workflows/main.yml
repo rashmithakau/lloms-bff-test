@@ -40,6 +40,7 @@ jobs:
           docker build -t rashmithakaushalya/lloms:latest .
           docker push rashmithakaushalya/lloms:latest
 
+
       # Step 6: SSH into EC2 and deploy
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v0.1.7
