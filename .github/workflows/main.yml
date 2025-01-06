@@ -49,9 +49,6 @@ jobs:
           username: ubuntu   # Replace if needed
           key: ${{ secrets.EC2_KEY }}
           script: |
-            docker stop lloms-container || true
-            docker rm lloms-container || true
-            docker rmi $(docker images -q) || true
             docker pull rashmithakaushalya/lloms:latest
-            docker run -d -p 3000:3000 --name lloms-container rashmithakaushalya/lloms:latest
+            
      
