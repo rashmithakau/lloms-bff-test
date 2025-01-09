@@ -53,6 +53,6 @@ jobs:
             docker rm lloms-container || true
             docker rmi $(docker images -q) || true
             docker pull rashmithakaushalya/lloms:latest
-            docker run -d -p 3000:3000 --name lloms-container -e PORT=${{ secrets.PORT }} -e PORT=${{ secrets.USER_SERVICE_BASE_URL }} rashmithakaushalya/lloms:latest  
+            docker run -d -p 3000:3000 --name lloms-container -e PORT=${{ secrets.PORT }} -e USER_SERVICE_BASE_URL=${{ secrets.USER_SERVICE_BASE_URL }} rashmithakaushalya/lloms:latest  
             
      
