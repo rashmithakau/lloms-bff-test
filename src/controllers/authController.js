@@ -9,10 +9,11 @@ const login = async (req, res, next) => {
     try {
         const user = await authenticateUser(username, password);
 
+
         console.log(user);
 
         if (user) {
-            const token = generateToken({ userId: user.userId, username: user.userName });
+            const token = generateToken({ userId: user.userId, username: user.userName , role: user.roleId ,outeltid: user.outletID });
 
             console.log(token);
 
